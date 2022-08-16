@@ -15,8 +15,8 @@ describe('Testes do componente \'About\'', () => {
   it('verifica se ao renderizar o \'About\' o paragrafo esta na tela', () => {
     renderWithRouter(<About />);
 
-    const aboutParagraph = screen.getByText(/simulates a Pokédex, a digital /i);
-    const aboutSecondParagraph = screen.getByText(/by type, and see more details /i);
+    const aboutParagraph = screen.getByText(/simulates a Pokédex, /i, { selector: 'p' });
+    const aboutSecondParagraph = screen.getByText(/by type, and see/i, { selector: 'p' });
     expect(aboutParagraph).toBeInTheDocument();
     expect(aboutSecondParagraph).toBeInTheDocument();
   });

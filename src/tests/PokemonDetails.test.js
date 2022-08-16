@@ -19,7 +19,7 @@ describe('Testes do componente \'PokemonDetails\'', () => {
       name: 'Pikachu Details', level: 2 });
     const pokemonSummary = screen.getByRole('heading', {
       name: 'Summary', level: 2 });
-    const summaryText = screen.getByText(/Pokémon roasts hard berries with electricity/i);
+    const summaryText = screen.getByText(/Pokémon roasts hard berr/i, { selector: 'p' });
     const pokemonLocations = screen.getByRole('heading', {
       name: 'Game Locations of Pikachu', level: 2 });
     const pokemonImgs = screen.getAllByAltText('Pikachu location');

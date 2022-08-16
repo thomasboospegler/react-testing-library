@@ -16,7 +16,7 @@ describe('Testes do componente \'FavoritePokemons\'', () => {
   it('verifica se ao renderizar o \'FavoritePokemons\' aparece mssg: esta vazio', () => {
     renderWithRouter(<FavoritePokemons />);
 
-    const message = screen.getByText(/No favorite pokemon found/i);
+    const message = screen.getByText(/No favorite pokemon found/i, { selector: 'p' });
     expect(message).toBeInTheDocument();
   });
 });
