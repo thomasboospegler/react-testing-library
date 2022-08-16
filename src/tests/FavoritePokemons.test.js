@@ -4,7 +4,7 @@ import renderWithRouter from '../renderWithRouter';
 import FavoritePokemons from '../pages/FavoritePokemons';
 
 describe('Testes do componente \'FavoritePokemons\'', () => {
-  it('verifica se ao renderizar o \'About\' o titulo esta na tela', () => {
+  it('verifica se ao renderizar o \'FavoritePokemons\' o titulo esta na tela', () => {
     renderWithRouter(<FavoritePokemons />);
 
     const favoriteTitle = screen.getByRole('heading', {

@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 import renderWithRouter from '../renderWithRouter';
 import About from '../pages/About';
 
-describe('Testes do componente \'App\'', () => {
+describe('Testes do componente \'About\'', () => {
   it('verifica se ao renderizar o \'About\' o titulo esta na tela', () => {
     renderWithRouter(<About />);
 
