@@ -61,4 +61,25 @@ describe('Testes do componente \'App\'', () => {
         { name: /Page requested not found/i, level: 2 });
       expect(notFoundTitle).toBeInTheDocument();
     });
+
+  it('verifica se o pokemon é adicionado aos favoritos e depois é removido',
+    () => {
+      const { history } = renderWithRouter(<App />);
+
+      const linkAbout = screen.getByRole('link', { name: /More details/i });
+      expect(linkAbout).toBeInTheDocument();
+      userEvent.click(linkAbout);
+
+      const { pathname } = history.location;
+      expect(pathname).toBe('/pokemons/25');
+
+      const checkboxFav = screen.getByLabelText('Pokémon favoritado?');
+      userEvent.click(checkboxFav);
+
+      const favoriteImg = screen.getByAltText('Pikachu is marked as favorite');
+      expect(favoriteImg).toHaveAttribute('src', '/star-icon.svg');
+
+      userEvent.click(checkboxFav);
+      expect(favoriteImg).not.toBeInTheDocument();
+    });
 });

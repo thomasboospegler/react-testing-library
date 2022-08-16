@@ -3,12 +3,15 @@ import { screen } from '@testing-library/react';
 import renderWithRouter from '../renderWithRouter';
 import PokemonDetails from '../pages/PokemonDetails';
 import pokemons from '../data';
+import { updateFavoritePokemons } from '../services/pokedexService';
+import favPokemons from './helpers/favPokemonsObj';
 
 describe('Testes do componente \'PokemonDetails\'', () => {
   it('verifica se ao renderizar o \'PokemonDetails\' pokemonInfo aparece na tela', () => {
     renderWithRouter(<PokemonDetails
-      match={ { params: { id: 25 } } }
-      isPokemonFavoriteById
+      match={ { params: { id: '25' } } }
+      isPokemonFavoriteById={ favPokemons }
+      onUpdateFavoritePokemons={ updateFavoritePokemons }
       pokemons={ pokemons }
     />);
 
@@ -31,8 +34,9 @@ describe('Testes do componente \'PokemonDetails\'', () => {
 
   it('verifica se ao renderizar o \'PokemonDetails\' o checkbox aparece na tela', () => {
     renderWithRouter(<PokemonDetails
-      match={ { params: { id: 25 } } }
-      isPokemonFavoriteById
+      match={ { params: { id: '25' } } }
+      isPokemonFavoriteById={ favPokemons }
+      onUpdateFavoritePokemons={ updateFavoritePokemons }
       pokemons={ pokemons }
     />);
 
